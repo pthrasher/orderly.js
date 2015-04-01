@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-var util = require('util');
 var fs = require("fs");
 var parserParse = require("./orderly").parse;
 var options = require("nomnom")
@@ -35,7 +34,7 @@ function parse (source) {
     var parsed = parserParse(source);
     return JSON.stringify(parsed,null,options.indent);
   } catch (e) {
-    util.puts(e);
+    console.log(e);
     process.exit(1);
   }
 }
@@ -49,7 +48,7 @@ function main (args) {
     if (options.outfile) {
       fs.writeSync(fs.openSync(p.resolve(options.outfile),'w+'), source, 0, "utf8");
     } else {
-      util.puts(source);
+      console.log(source);
     }
   } else {
     var stdin = process.openStdin();
@@ -59,7 +58,7 @@ function main (args) {
       source += chunk.toString('utf8');
     });
     stdin.on('end', function () {
-      util.puts(parse(source));
+      console.log(parse(source));
     });
   }
 }

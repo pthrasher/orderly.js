@@ -2,6 +2,11 @@
   "author": "Zach Carter <zcarter@cse.usf.edu> (http://zaa.ch)",
   "name": "orderly",
   "description": "Translates Orderly to JSON Schema",
+  "contributors": [
+    "Philip Thrasher <philipthrasher@gmail.com> (http://thrash.io/)",
+    "Camilo Aguilar",
+    "Farrin Reid <blakmatrix@gmail.com> (http://www.blakmatrix.com)"
+  ],
   "keywords": [
     "json",
     "orderly",
